@@ -21,7 +21,7 @@
 #' \code{fig.keep='none'}; the devices \code{pdf/jpeg/png/eps/tikz=TRUE} are
 #' converted to \code{dev='pdf'/'jpeg'/'png'/'postscript'/'tikz'};
 #' \code{pdf/jpeg/png/eps/tikz=FALSE} are removed;
-#' \code{results=tex/verbatim/hide} are changed to
+#' \code{results=tex/myVerbatim/hide} are changed to
 #' \code{results='asis'/'markup'/'hide'}; \code{width/height} are changed to
 #' \code{fig.width/fig.height}; \code{prefix.string} is changed to
 #' \code{fig.path}; \code{print/term/prefix=TRUE/FALSE} are removed; most of the
@@ -129,8 +129,8 @@ fix_sweave = function(x) {
 
   x = gsub_msg('replacing results=tex with results=asis',
                'results\\s*=\\s*tex', 'results=asis', x)
-  x = gsub_msg('replacing results=verbatim with results=markup',
-               'results\\s*=\\s*verbatim', 'results=markup', x)
+  x = gsub_msg('replacing results=myVerbatim with results=markup',
+               'results\\s*=\\s*myVerbatim', 'results=markup', x)
   x = gsub_msg('quoting the results option',
                'results\\s*=\\s*(asis|markup|hide)', "results='\\1'", x)
 
@@ -164,7 +164,7 @@ which_sweave = function(x) {
   unique(c(
     grep('^\\s*\\\\(usepackage(\\[.*\\])?\\{Sweave|SweaveInput\\{|SweaveOpts\\{)', x),
     grep('^<<.*\\b(echo|eval|split|include)\\s*=\\s*(true|false)\\b.*>>=', x),
-    grep('^<<.*\\bresults\\s*=\\s*(tex|verbatim|hide)\\b.*>>=', x),
+    grep('^<<.*\\bresults\\s*=\\s*(tex|myVerbatim|hide)\\b.*>>=', x),
     grep('^<<.*\\b(fig|pdf|eps|jpeg|png|tikz)\\s*=\\s*(true|false|T|F).*>>=', x),
     grep('^<<.*([, ])(width|height)\\s*=\\s*(\\d+).*>>=', x),
     grep('^<<.*\\b(keep.source|print|term|prefix)\\s*=\\s*(true|false|T|F).*>>=', x)
