@@ -188,10 +188,10 @@ hook_plot_tex = function(x, options) {
   } else x
 }
 
-# rm empty kframe and Verbatim environments
+# rm empty kframe and lstlisting environments
 .rm.empty.envir = function(x) {
   x = gsub('\\\\begin\\{(kframe)\\}\\s*\\\\end\\{\\1\\}', '', x)
-  gsub('\\\\end\\{(myVerbatim|alltt)\\}\\s*\\\\begin\\{\\1\\}[\n]?', '', x)
+  gsub('\\\\end\\{(lstlisting|alltt)\\}\\s*\\\\begin\\{\\1\\}[\n]?', '', x)
 }
 
 # inline hook for tex
@@ -206,7 +206,7 @@ hook_plot_tex = function(x, options) {
 }
 
 .verb.hook = function(x)
-  paste(c('\\begin{myVerbatim}', sub('\n$', '', x), '\\end{myVerbatim}', ''), collapse = '\n')
+  paste(c('\\begin{lstlisting}', sub('\n$', '', x), '\\end{lstlisting}', ''), collapse = '\n')
 .color.block = function(color1 = '', color2 = '') {
   function(x, options) {
     x = gsub('\n*$', '', x)

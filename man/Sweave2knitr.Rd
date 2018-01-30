@@ -46,7 +46,7 @@ will be automatically generated); \code{fig=FALSE} is changed to
 \code{fig.keep='none'}; the devices \code{pdf/jpeg/png/eps/tikz=TRUE} are
 converted to \code{dev='pdf'/'jpeg'/'png'/'postscript'/'tikz'};
 \code{pdf/jpeg/png/eps/tikz=FALSE} are removed;
-\code{results=tex/myVerbatim/hide} are changed to
+\code{results=tex/lstlisting/hide} are changed to
 \code{results='asis'/'markup'/'hide'}; \code{width/height} are changed to
 \code{fig.width/fig.height}; \code{prefix.string} is changed to
 \code{fig.path}; \code{print/term/prefix=TRUE/FALSE} are removed; most of the

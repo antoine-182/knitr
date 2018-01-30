@@ -100,9 +100,9 @@ assert(
 
 txt = '\\documentclass{article}
 \\begin{document}
-\\begin{myVerbatim}
+\\begin{lstlisting}
 \\documentclass{article}
-\\end{myVerbatim}
+\\end{lstlisting}
 \\Sexpr{pi}
 \\end{document}'
 res = strsplit(knit(text = txt, quiet = TRUE), '\n')[[1]]
