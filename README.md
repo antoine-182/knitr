@@ -12,6 +12,9 @@ slight tweaks motivated from my everyday use of Sweave. See the package
 [FAQ's](https://yihui.name/knitr/faq/) for a list of
 frequently asked questions (including where to ask questions).
 
+**This package is a packge slightly modified. All the greatness of this package comes from this repository [homepage](https://yihui.name/knitr/). The only feature is that the output of a R chunk is in a new environment _lstlisting_ which allow much more font specification than the verbatim and Verbatim (fancyvrb) environment.
+If one have any remarks or question, feel free to post them.** 
+
 ## Installation
 
 You can install the stable version on
